@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinister Software - Your Friendly Digital Wizard, Joe</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Three.js CDN for 3D graphics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Anime.js CDN for slick animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Your custom styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-gray-800">
+
+    <!-- Header - Now sticky/floating with better shadow -->
+    <header class="header-bg text-white sticky top-0 z-50 border-b border-gray-700 shadow-xl transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="flex items-center rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 p-2">
+                <!-- Placeholder Image for Logo -->
+                <img src="https://placehold.co/180x40/1a202c/ffffff?text=SS+LOGO" alt="Sinister Software Logo Placeholder" class="h-10">
+            </a>
+            <div class="hidden md:flex space-x-2">
+                <a href="#services" class="nav-link py-2 px-3 hover:bg-red-700 rounded-md transition-all duration-200">Services</a>
+                <a href="#about" class="nav-link py-2 px-3 hover:bg-red-700 rounded-md transition-all duration-200">About Me</a>
+                <a href="#contact" class="nav-link py-2 px-3 hover:bg-red-700 rounded-md transition-all duration-200">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-red-500 rounded-md p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu - Improved transition and styling -->
+        <div id="mobile-menu" class="md:hidden bg-gray-900 px-6 py-4 overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
+            <a href="#services" class="block text-white py-3 px-4 text-lg hover:bg-red-700 rounded-md transition duration-300 mb-2">Services</a>
+            <a href="#about" class="block text-white py-3 px-4 text-lg hover:bg-red-700 rounded-md transition duration-300 mb-2">About Me</a>
+            <a href="#contact" class="block text-white py-3 px-4 text-lg hover:bg-red-700 rounded-md transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section bg-gradient-to-br from-[#1a202c] to-black flex items-center justify-center min-h-screen text-center text-white py-20 pt-24 md:pt-32 relative overflow-hidden">
+        <canvas id="hero-canvas" class="absolute top-0 left-0 w-full h-full z-0 pointer-events-none"></canvas>
+        <div class="hero-content max-w-4xl mx-auto px-6 relative z-10">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 rounded-lg bg-black bg-opacity-40 p-4 relative inline-block">
+                Your Personal Partner for Web Design, App Development & Bot Solutions – Let's Make Some Digital Magic!
+                <span class="sale-badge">Grand Opening Sale!</span>
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-8 leading-relaxed rounded-lg bg-black bg-opacity-30 p-3">
+                Hi, I'm Joe! Tired of wrestling with tech? I'm here to bring your unique vision to life online. I personally craft custom websites, powerful web applications, and even intelligent Discord bots, ensuring every pixel and line of code makes you grin.
+            </p>
+            <a href="#services" class="btn-primary text-white bg-red-500 hover:bg-red-600 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-red-300 transition transform hover:scale-105">
+                Let's Build Something Awesome Together!
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-extrabold text-center mb-12 text-gray-900">My Dedicated Solutions & Services (No Headaches, Just Results!)</h2>
+            <p class="text-center text-lg max-w-4xl mx-auto mb-16 text-gray-700">
+                As Joe, I promise no confusing jargon, just clear communication. From launching your very first website (yes, even if you just have a napkin sketch!) to developing complex web applications and automating your community with custom Discord bots, I offer straightforward, affordable packages. Your specific business thriving online isn't just a goal; it's my personal mission.
+            </p>
+
+            <div class="grid services-grid">
+
+                <!-- Sinister Launchpad Card (Website Design) -->
+                <div class="bg-gray-50 p-8 card text-center flex flex-col justify-between relative">
+                    <span class="sale-badge">Grand Opening Sale!</span>
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4 text-red-600">Sinister Launchpad <br><span class="text-xl text-gray-600">(Your Website, Simplified)</span></h3>
+                        <p class="text-5xl font-extrabold mb-0 text-gray-900">$250 <span class="text-xl font-normal text-gray-500">Flat Fee</span></p>
+                        <p class="text-sm line-through text-gray-400 mb-4">(Originally $500 – Grab this deal while it lasts!)</p>
+                        <p class="text-lg text-gray-700 mb-8">Your Essential Online Presence, Fast & Friendly.</p>
+                        <ul class="text-left text-gray-600 space-y-3 mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>1-3 Pages Crafted Just for Your Awesomeness</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Looks Amazing on Everything (Phones, Tablets, Spaceships...)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Your Brilliance, My Technical Know-How</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Direct Line to Your Future Customers (Contact Form)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>One Round of "Perfection" Revisions (I'm a Stickler!)</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn-primary text-white bg-red-500 hover:bg-red-600 shadow-md hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-red-300 transition transform hover:scale-105">
+                        Let's Create My Awesome Website
+                    </a>
+                </div>
+
+                <!-- Sinister App Foundry (App/Web App Design) -->
+                <div class="bg-gray-50 p-8 card text-center flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4 text-gray-800">Sinister App Foundry <br><span class="text-xl text-gray-600">(Your App, My Code-Fu)</span></h3>
+                        <p class="text-4xl font-extrabold mb-4 text-gray-900">Starts from $1500 <span class="text-xl font-normal text-gray-500">Flat Fee</span></p>
+                        <p class="text-lg text-gray-700 mb-8">Custom Solutions Tailored for Your Business Needs (No cookie-cutters here!).</p>
+                        <ul class="text-left text-gray-600 space-y-3 mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Interactive Apps Built to Make Life Easier</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Designed So Your Users Say "Wow!" (UI/UX)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Data Integration That Just Works (No Headaches!)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Built to Grow (Scalable & Super Secure)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Plays Nicely with Your Existing Systems</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn-primary text-white bg-red-500 hover:bg-red-600 shadow-md hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-red-300 transition transform hover:scale-105">
+                        Let's Chat About My App Idea
+                    </a>
+                </div>
+
+                <!-- Sinister Bot Builder (Discord Bots) -->
+                <div class="bg-gray-50 p-8 card text-center flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4 text-gray-800">Sinister Bot Builder <br><span class="text-xl text-gray-600">(Your Discord Sidekick)</span></h3>
+                        <p class="text-4xl font-extrabold mb-4 text-gray-900">Starts from $300 <span class="text-xl font-normal text-gray-500">Flat Fee</span></p>
+                        <p class="text-lg text-gray-700 mb-8">Automate & Enhance Your Community, with a Little Digital Helper.</p>
+                        <ul class="text-left text-gray-600 space-y-3 mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Custom Commands (No More Repetitive Typing!)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Your Personal Mod/Mgmt. Assistant (24/7!)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Automated Info Delivery (Your Members Will Thank You)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Game Integration & Fun Features (For Laughter & Engagement)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Scalable & Reliably Maintained (No Robot Uprisings!)</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn-primary text-white bg-red-500 hover:bg-red-600 shadow-md hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-red-300 transition transform hover:scale-105">
+                        Let's Automate My Discord
+                    </a>
+                </div>
+
+                <!-- Sinister Host Card -->
+                <div class="bg-gray-50 p-8 card text-center flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4 text-gray-800">Sinister Host <br><span class="text-xl text-gray-600">(Your Project's Cozy Home)</span></h3>
+                        <p class="text-5xl font-extrabold mb-4 text-gray-900">$20 <span class="text-xl font-normal text-gray-500">/ month</span></p>
+                        <p class="text-lg text-gray-700 mb-8">Reliable Hosting & Essential Security for Your Project (No Digital Gremlins Allowed!).</p>
+                        <ul class="text-left text-gray-600 space-y-3 mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>High-Speed, Secure Hosting (Zoom! Pow!)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Free SSL Certificate Included (That's Encryption, Baby!)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Daily Backups for Peace of Mind (Just in Case!)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Continuous Uptime Monitoring (I'm Always Watching... in a Good Way!)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Dedicated Server-Level Security (Like a Digital Bouncer)</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn-primary text-white bg-red-500 hover:bg-red-600 shadow-md hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-red-300 transition transform hover:scale-105">
+                        Secure My Project
+                    </a>
+                </div>
+
+                <!-- Sinister Shield Card -->
+                <div class="bg-gray-50 p-8 card text-center flex flex-col justify-between border-2 border-red-500">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-sm font-bold px-4 py-1 rounded-full shadow-md">MOST POPULAR</div>
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4 text-red-600">Sinister Shield <br><span class="text-xl text-gray-600">(Your Digital Guardian)</span></h3>
+                        <p class="text-5xl font-extrabold mb-4 text-gray-900">$95 <span class="text-xl font-normal text-gray-500">/ month</span></p>
+                        <p class="text-lg text-gray-700 mb-8">Proactive Maintenance & Personal Updates for Your Peace of Mind (I've Got Your Back!).</p>
+                        <ul class="text-left text-gray-600 space-y-3 mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>All "Sinister Host" Goodies Included</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Monthly Updates (Keeps Things Fresh & Secure)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Enhanced Security & Malware Scans (No Nasty Surprises)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>1 Hour of Personal Content Tweaks/Month (Your Wish is My Command)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Priority Personal Email Support (Direct Line to Joe)</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn-primary text-white bg-red-500 hover:bg-red-600 shadow-md hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-red-300 transition transform hover:scale-105">
+                        Get My Personal Shield
+                    </a>
+                </div>
+
+                <!-- Sinister Command Card -->
+                <div class="bg-gray-50 p-8 card text-center flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4 text-gray-800">Sinister Command <br><span class="text-xl text-gray-600">(Your Digital Commander)</span></h3>
+                        <p class="text-5xl font-extrabold mb-4 text-gray-900">$195 <span class="text-xl font-normal text-gray-500">/ month</span></p>
+                        <p class="text-lg text-gray-700 mb-8">Full-Service Care & Performance Optimization, Handled by Joe Himself.</p>
+                        <ul class="text-left text-gray-600 space-y-3 mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>All "Sinister Shield" Goodness & More!</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>2-3 Hours of Your Content Updates/Month (Joe's on the Job!)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Performance Optimization (Making Your Project Zoom!)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>My Fastest Response Times (I'm Quick on the Draw!)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Personal Minor Design Tweaks (Making It Sparkle)</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn-primary text-white bg-red-500 hover:bg-red-600 shadow-md hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-red-300 transition transform hover:scale-105">
+                        Get My Full Command
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <p class="text-xl font-semibold text-gray-900 mb-4">Just need a quick change or update?</p>
+                <p class="text-2xl font-bold text-red-600">$10 per change</p>
+                <p class="text-gray-600 text-sm">(A "change" is a single, isolated modification, e.g., a text edit, or an image swap – consider it a digital quick fix, personally handled!)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <h2 class="text-4xl font-extrabold mb-8 text-gray-900">About Sinister Software (and the guy behind it – that's me, Joe!)</h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                Hi there! I'm Joe, the digital wizard (and founder!) behind Sinister Software. I'm truly proud to be from Ripon, California, and my absolute passion is helping local businesses like yours conquer the digital world. Seriously, I believe that every business, big or small, deserves an online presence that just *works* like a charm – whether it's a sleek website, a super-smart web application, or a Discord bot that handles the mundane stuff so you don't have to. And the best part? No scary price tags or confusing tech talk!
+            </p>
+            <p class="text-lg leading-relaxed text-gray-700">
+                My philosophy is pretty simple: I take the confusing tech stuff and make it, well, surprisingly easy. I personally roll up my sleeves and handle your project from start to finish, offering straightforward solutions and consistent, dedicated support. Think of me as your personal digital assistant, but cooler and with more caffeine. This way, you can kick back, relax, and focus on what *you* do best: running your awesome business. I'm not just building code; I'm building strong partnerships. And I'm here to ensure your digital dreams become a fantastic, working reality.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <h2 class="text-4xl font-extrabold text-center mb-12 text-gray-900">Let's Connect (Seriously, I'm Friendly!)</h2>
+            <p class="text-center text-lg text-gray-700 mb-8">
+                Ready to take your business online or jazz up your digital presence? Just fill out the form below, and I, Joe, will personally review your needs and get back to you faster than you can say "responsive design." I'm genuinely excited to hear your ideas!
+            </p>
+
+            <form id="contact-form" class="bg-white p-8 card">
+                <div class="mb-6">
+                    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Your Awesome Name:</label>
+                    <input type="text" id="name" name="name" class="input-field w-full focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Your Name" required>
+                </div>
+                <div class="mb-6">
+                    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Your Best Email:</label>
+                    <input type="email" id="email" name="email" class="input-field w-full focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="your@email.com" required>
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Tell Me About Your Project (Don't Be Shy!):</label>
+                    <textarea id="message" name="message" rows="5" class="textarea-field w-full focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="I'd love to hear about your business goals and what you're looking for... the more details, the merrier!" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary text-white bg-red-500 hover:bg-red-600 shadow-md hover:shadow-xl w-full focus:outline-none focus:ring-4 focus:ring-red-300 transition transform hover:scale-105">
+                    Send My Message to Joe (Let's Do This!)
+                </button>
+                <div id="form-message" class="mt-4 text-center text-sm font-semibold hidden"></div>
+            </form>
+
+            <div class="text-center mt-12 text-gray-700">
+                <p class="mb-2">For direct inquiries, you can always email me personally (I check my inbox more than my fridge!):</p>
+                <p class="text-xl font-bold text-gray-900">joe@sinsoft.net</p>
+                <p class="mt-6 text-sm">I'm here to serve businesses across the Central Valley and beyond – let's make your digital presence legendary!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="header-bg text-white py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; <span id="current-year"></span> Sinister Software. All rights reserved. (We promise, no actual sinister stuff here!)</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-red-400 transition duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-red-400 transition duration-300">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top fixed bottom-6 right-6 bg-red-500 text-white p-3 rounded-full shadow-lg hover:bg-red-600 focus:outline-none focus:ring-4 focus:ring-red-300 transition-all duration-300 z-1000 hidden">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+    </button>
+
+    <!-- Your custom JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>

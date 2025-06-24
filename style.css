@@ -1,129 +1,125 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+/* style.css */
 
 body {
-  margin: 0;
-  font-family: 'MedievalSharp', cursive;
-  color: #f4f0e0;
-  background: url('dungeon-bg.jpg') center center fixed;
-  background-size: cover;
-  background-color: #121212;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff; /* Changed to pure white to match branding */
+    overflow-x: hidden; /* Prevent horizontal scroll from 3D canvas */
+}
+.header-bg {
+    background-color: #1a202c; /* Darker header for "sinister" touch (effectively black) */
+}
+/* Hero section specific styling for the background */
+.hero-section {
+    background-image: linear-gradient(to right bottom, rgba(26, 32, 44, 0.9), rgba(0, 0, 0, 0.7));
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Needed for absolute positioning of canvas */
+    overflow: hidden; /* Ensures canvas doesn't spill out */
+}
+#hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Behind content */
+    pointer-events: none; /* Allows clicks to pass through to elements below */
+}
+.hero-content {
+    position: relative;
+    z-index: 10; /* Above canvas */
+}
+.btn-primary {
+    /* Shadcn Button-like styling applied directly via these classes */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    border-radius: 0.375rem; /* rounded-md */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+    height: 2.5rem; /* h-10 */
+    padding-top: 0.5rem; /* py-2 */
+    padding-bottom: 0.5rem; /* py-2 */
+    /* Custom primary button colors */
+    background-color: #ef4444; /* Red button for emphasis */
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* shadow-lg */
+}
+.btn-primary:hover {
+    background-color: #dc2626; /* Darker red on hover */
+    transform: scale(1.05); /* hover:scale-105 */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05); /* hover:shadow-xl */
+}
+.btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.5); /* focus:ring-4 focus:ring-red-300 */
 }
 
-header {
-  background: rgba(20, 20, 20, 0.8);
-  padding: 2rem;
-  text-align: center;
-  border-bottom: 4px solid #333;
-  backdrop-filter: blur(6px);
-  animation: fadeInDown 1s ease;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 0.75rem; /* rounded-xl */
+}
+.input-field, .textarea-field {
+    border: 1px solid #cbd5e0; /* border-gray-300 */
+    border-radius: 0.5rem; /* rounded-lg */
+    padding: 0.75rem 1rem; /* p-3 */
+}
+.nav-link {
+    padding: 0.5rem 0.75rem; /* Add padding for better click area */
+    border-radius: 0.375rem; /* rounded-md */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Styles for hover are now in Tailwind classes in index.html */
 }
 
-.logo {
-  max-width: 100px;
-  margin-bottom: 1rem;
+/* Scroll to Top Button */
+.scroll-top {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: #ef4444;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 9999px; /* Full rounded */
+    cursor: pointer;
+    /* display: none; */ /* Hidden by default - managed by JS */
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease;
+}
+.scroll-top:hover {
+    background-color: #dc2626;
+}
+.sale-badge {
+    background-color: #ef4444; /* Changed from orange to red to match branding */
+    color: white;
+    font-weight: bold;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px; /* Full rounded */
+    font-size: 0.75rem; /* text-xs */
+    position: absolute;
+    top: -0.75rem;
+    right: -0.75rem;
+    transform: rotate(5deg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* New custom styling for wider grid for services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust minmax as needed */
+    gap: 2rem;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 3rem;
-  color: #ffaa33;
-  text-shadow: 0 0 8px #cc4444;
+/* Mobile Menu transition classes */
+.mobile-menu-open {
+    max-height: 100vh; /* Expands to full height */
+    opacity: 1;
 }
-
-.tagline {
-  font-size: 1.2rem;
-  color: #ccc;
-  margin-top: 0.5rem;
-}
-
-nav {
-  margin-top: 1.5rem;
-}
-
-nav a {
-  color: #ffaa33;
-  text-decoration: none;
-  margin: 0 1rem;
-  font-weight: bold;
-  transition: transform 0.2s, color 0.2s;
-}
-
-nav a:hover {
-  transform: scale(1.1);
-  color: #ffcc66;
-  text-shadow: 0 0 6px #ff9933;
-}
-
-main {
-  padding: 2rem;
-}
-
-.hero, .featured-game {
-  background: rgba(30, 30, 30, 0.8);
-  border: 2px solid #444;
-  border-radius: 12px;
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 800px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
-  animation: fadeInUp 1.2s ease;
-}
-
-.button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 2rem;
-  background: #cc4444;
-  color: #fff8e1;
-  border: 2px solid #aa2222;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease, transform 0.2s;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-.button:hover {
-  background: #ff5555;
-  transform: translateY(-2px);
-}
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  background: rgba(15, 15, 15, 0.7);
-  font-size: 0.9rem;
-  color: #bbb;
-  border-top: 2px solid #333;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.4);
-}
-
-/* Animations */
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Burst effect */
-.burst {
-  position: fixed;
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, gold, transparent);
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  animation: burstAnim 0.6s ease-out forwards;
-  z-index: 999;
-}
-
-@keyframes burstAnim {
-  from { transform: scale(0); opacity: 1; }
-  to { transform: scale(2); opacity: 0; }
+.mobile-menu-closed {
+    max-height: 0; /* Collapses to zero height */
+    opacity: 0;
 }
